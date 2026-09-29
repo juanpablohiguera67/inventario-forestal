@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Árboles registrados</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="logo">
+            Inventario Forestal
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="arboles.html">Árboles</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="seccion">
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">INVENTARIO</p>
+
+                <h1>Árboles registrados</h1>
+
+                <p>
+                    Consulta la información de cada árbol registrado
+                    en el inventario forestal.
+                </p>
+
+            </div>
+
+
+            <div class="arboles-grid" id="listaArboles">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Inventario Forestal</p>
+        <p>Proyecto escolar</p>
+
+    </footer>
+
+
+    <script src="datos.js"></script>
+
+    <script>
+
+        const lista = document.getElementById("listaArboles");
+
+        for (const id in arboles) {
+
+            const arbol = arboles[id];
+
+            const tarjeta = document.createElement("div");
+
+            tarjeta.className = "tarjeta-arbol";
+
+            tarjeta.innerHTML = `
+                
+                <div class="foto-arbol">
+
+                    ${
+                        arbol.imagen
+                        ? `<img src="${arbol.imagen}" alt="Fotografía de ${arbol.nombre}">`
+                        : "🌳"
+                    }
+
+                </div>
+
+                <div class="informacion-arbol">
+
+                    <span class="codigo">
+                        ${arbol.codigo}
+                    </span>
+
+                    <h3>
+                        ${arbol.nombre}
+                    </h3>
+
+                    <p>
+                        ${arbol.cientifico}
+                    </p>
+
+                    <a
+                        href="arbol.html?id=${id}"
+                        class="boton-pequeno"
+                    >
+                        Ver árbol
+                    </a>
+
+                </div>
+            `;
+
+            lista.appendChild(tarjeta);
+        }
+
+    </script>
+
+</body>
+</html>

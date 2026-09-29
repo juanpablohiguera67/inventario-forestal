@@ -1,0 +1,359 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f2;
+    color: #243024;
+    line-height: 1.6;
+}
+.foto-arbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* ENCABEZADO */
+
+.encabezado {
+    width: 100%;
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    border-bottom: 1px solid #e2e7df;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #245c35;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #344434;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #2d7a42;
+}
+
+
+/* PORTADA */
+
+.hero {
+    min-height: 500px;
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #315c3a;
+}
+
+.hero-texto {
+    max-width: 650px;
+    color: white;
+}
+
+.etiqueta {
+    color: #5f9f68;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero .etiqueta {
+    color: #c4e6c5;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a8d5a8;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÓN */
+
+.boton {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background-color: #3d814b;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: #2f693b;
+}
+
+
+/* ESTADÍSTICAS */
+
+.estadisticas {
+    width: 84%;
+    max-width: 1100px;
+
+    margin: -40px auto 80px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+.estadistica {
+    padding: 30px;
+    text-align: center;
+
+    border-right: 1px solid #e5e8e3;
+}
+
+.estadistica:last-child {
+    border-right: none;
+}
+
+.estadistica h2 {
+    font-size: 35px;
+    color: #3d814b;
+}
+
+.estadistica p {
+    color: #697369;
+}
+
+
+/* SECCIONES */
+
+.seccion {
+    width: 84%;
+    max-width: 1100px;
+
+    margin: 0 auto 100px;
+}
+
+.titulo-seccion {
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion > p:last-child {
+    color: #697369;
+}
+
+
+/* TARJETAS DE ÁRBOLES */
+
+.arboles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-arbol {
+    background-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-arbol:hover {
+    transform: translateY(-5px);
+}
+
+.foto-arbol {
+    height: 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #dfeadf;
+
+    font-size: 80px;
+}
+
+.informacion-arbol {
+    padding: 25px;
+}
+
+.codigo {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #3d814b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.informacion-arbol h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.informacion-arbol p {
+    color: #697369;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.boton-pequeno {
+    display: inline-block;
+
+    padding: 9px 17px;
+
+    background-color: #edf4ed;
+
+    color: #2d6939;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+.boton-pequeno:hover {
+    background-color: #dcebdc;
+}
+
+
+/* INFORMACIÓN DEL PROYECTO */
+
+.proyecto {
+    max-width: 800px;
+}
+
+.proyecto > p {
+    font-size: 18px;
+    color: #596359;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    padding: 40px 8%;
+
+    text-align: center;
+
+    background-color: #1e3022;
+
+    color: #dce7dc;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+        padding: 15px 5%;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 60px 8%;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .estadisticas {
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin-top: -30px;
+    }
+
+    .estadistica {
+        border-right: none;
+        border-bottom: 1px solid #e5e8e3;
+    }
+
+    .estadistica:last-child {
+        border-bottom: none;
+    }
+
+    .arboles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion {
+        width: 90%;
+    }
+
+}

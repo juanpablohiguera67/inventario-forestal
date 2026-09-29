@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventario Forestal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="logo">
+            Inventario Forestal
+        </div>
+
+        <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#arboles">Árboles</a>
+            <a href="#proyecto">Proyecto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="hero">
+
+            <div class="hero-texto">
+
+                <p class="etiqueta">
+                    PROYECTO AMBIENTAL
+                </p>
+
+                <h1>
+                    Inventario Forestal<br>
+                    <span>Colegio Cooperativo</span>
+                </h1>
+
+                <p>
+                    Conoce los árboles registrados en nuestra institución,
+                    sus características, ubicación y estado.
+                </p>
+
+                <a href="#arboles" class="boton">
+                    Explorar árboles
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS -->
+        <section class="estadisticas">
+
+            <div class="estadistica">
+
+                <h2>240</h2>
+
+                <p>
+                    Árboles registrados
+                </p>
+
+            </div>
+
+
+            <div class="estadistica">
+
+                <h2>28</h2>
+
+                <p>
+                    Especies
+                </p>
+
+            </div>
+
+
+            <div class="estadistica">
+
+                <h2>5</h2>
+
+                <p>
+                    Zonas
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATÁLOGO DE ÁRBOLES -->
+        <section id="arboles" class="seccion">
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">
+                    INVENTARIO
+                </p>
+
+                <h2>
+                    Árboles registrados
+                </h2>
+
+                <p>
+                    Conoce algunos de los árboles registrados
+                    en nuestra institución.
+                </p>
+
+            </div>
+
+
+            <!-- TARJETA QUE CAMBIA AUTOMÁTICAMENTE -->
+            <div class="catalogo-arbol">
+
+                <div class="foto-arbol">
+
+                    <img
+                        id="catalogoImagen"
+                        src=""
+                        alt="Fotografía del árbol"
+                    >
+
+                </div>
+
+
+                <div class="informacion-arbol">
+
+                    <span
+                        class="codigo"
+                        id="catalogoCodigo"
+                    >
+                        ARB-001
+                    </span>
+
+
+                    <h3 id="catalogoNombre">
+                        Nombre del árbol
+                    </h3>
+
+
+                    <p id="catalogoCientifico">
+                        Nombre científico
+                    </p>
+
+
+                    <a
+                        id="catalogoBoton"
+                        href="#"
+                        class="boton-pequeno"
+                    >
+                        Ver árbol
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ÚNICO BOTÓN PARA VER TODOS -->
+            <div style="text-align: center; margin-top: 40px;">
+
+                <a
+                    href="arboles.html"
+                    class="boton"
+                >
+                    Ver todos los árboles
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN DEL PROYECTO -->
+        <section
+            id="proyecto"
+            class="seccion proyecto"
+        >
+
+            <div class="titulo-seccion">
+
+                <p class="etiqueta">
+                    SOBRE EL PROYECTO
+                </p>
+
+                <h2>
+                    Inventario Forestal
+                </h2>
+
+            </div>
+
+
+            <p>
+                Este proyecto tiene como objetivo identificar, registrar
+                y caracterizar los árboles presentes en nuestra institución,
+                promoviendo el conocimiento y cuidado de la biodiversidad.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>
+            © 2026 Inventario Forestal Colegio Cooperativo
+        </p>
+
+        <p>
+            Proyecto ambiental escolar SENA
+        </p>
+
+    </footer>
+
+
+    <!-- CARGAR LOS DATOS DE LOS ÁRBOLES -->
+    <script src="datos.js"></script>
+
+
+    <!-- CATÁLOGO AUTOMÁTICO -->
+    <script>
+
+        const idsArboles = Object.keys(arboles);
+
+        let posicion = 0;
+
+
+        function mostrarArbol() {
+
+            const id = idsArboles[posicion];
+
+            const arbol = arboles[id];
+
+
+            // Imagen del árbol
+            document.getElementById("catalogoImagen").src =
+                arbol.imagen;
+
+
+            // Nombre alternativo de la imagen
+            document.getElementById("catalogoImagen").alt =
+                "Fotografía de " + arbol.nombre;
+
+
+            // Código
+            document.getElementById("catalogoCodigo").textContent =
+                arbol.codigo;
+
+
+            // Nombre común
+            document.getElementById("catalogoNombre").textContent =
+                arbol.nombre;
+
+
+            // Nombre científico
+            document.getElementById("catalogoCientifico").textContent =
+                arbol.cientifico;
+
+
+            // Botón "Ver árbol"
+            document.getElementById("catalogoBoton").href =
+                "arbol.html?id=" + id;
+
+        }
+
+
+        // Mostrar el primer árbol
+        mostrarArbol();
+
+
+        // Cambiar de árbol cada 4 segundos
+        setInterval(function () {
+
+            posicion++;
+
+            if (posicion >= idsArboles.length) {
+
+                posicion = 0;
+
+            }
+
+            mostrarArbol();
+
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>
